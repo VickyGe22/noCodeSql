@@ -1,5 +1,6 @@
 "use client";
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 import React, { useEffect, useState } from "react";
 import Header from "@/app/ClientComponent/loginComponent/header";
 import Footer from "@/app/ClientComponent/loginComponent/footer";
