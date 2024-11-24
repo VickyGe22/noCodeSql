@@ -11,7 +11,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-export const ResultTable = ({ data,bucket,setIsTableSet  }) => {
+interface ResultTableProps {
+  data: Array<{ _measurement: any; _field: any; _value: number; _time: string | number | Date }>;
+  bucket: string;
+  setIsTableSet: (isSet: boolean) => void;
+}
+
+export const ResultTable: React.FC<ResultTableProps> = ({ data, bucket, setIsTableSet }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [filters, setFilters] = useState({
@@ -39,7 +45,7 @@ export const ResultTable = ({ data,bucket,setIsTableSet  }) => {
       _value: typeof item._value === 'number' ? item._value.toFixed(2) : (item._value || 'N/A'),
       _time: item._time ? new Date(item._time).toLocaleString() : 'N/A'
     }));
-  }, [data]);
+  }, [data, bucket]);
 
   const filteredData = useMemo(() => {
     return formattedData.filter((item: { _bucket: any; _measurement: any; _field: any; _value: any; _time: any; }) => 

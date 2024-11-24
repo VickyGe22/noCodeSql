@@ -129,7 +129,7 @@ const Results: React.FC<ResultsProps> = ({
         )}
         {currentTab === "Table" && (
           <ResultTable
-            data={queryResult}
+            data={queryResult || []}
             bucket={selectedBucket}
             setIsTableSet={setIsTableSet}
           />

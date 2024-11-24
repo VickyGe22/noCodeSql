@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { FaTimes } from "react-icons/fa";
 import { FilterConfig } from "@/app/types/types";
+import Image from 'next/image';
 
 interface QueryBuilderProps {
   selectedMeasurements: string[];
@@ -76,7 +77,7 @@ function QueryBuilder({
             </div>
           ) : (
             <div className="flex items-center justify-center">
-              <img 
+              <Image 
                 src="/icon/drop.png"
                 alt="Loading" 
                 className="w-8 h-8 mr-2" 
@@ -115,7 +116,7 @@ function QueryBuilder({
             </div>
           ) : (
             <div className="flex items-center justify-center">
-              <img 
+              <Image 
                 src="/icon/drop.png"
                 alt="Loading" 
                 className="w-8 h-8 mr-2" 
@@ -179,7 +180,7 @@ function QueryBuilder({
             </div>
           ) : (
             <div className="flex items-center justify-center">
-              <img 
+              <Image 
                 src="/icon/drop.png"
                 alt="Loading" 
                 className="w-8 h-8 mr-2" 

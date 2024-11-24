@@ -214,9 +214,9 @@ export default function Main() {
         }
       }
     }
-
+    
     initializeData();
-  }, [url, orgId, token, selectedBucket, router]);
+  }, [url, orgId, token, selectedBucket, router, grafanaUrl, bearerToken]);
 
   useEffect(() => {
     const createDashboard = async () => {
